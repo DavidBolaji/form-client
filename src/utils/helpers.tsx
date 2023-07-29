@@ -6,7 +6,7 @@ export const exportToExcel = async () => {
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
   const fileName = "data.xlsx";
 
-  fetch("http://localhost:5000/api/v1/users")
+  fetch("https://form-5m0m.onrender.com/api/v1/users")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
