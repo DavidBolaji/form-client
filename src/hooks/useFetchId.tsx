@@ -8,7 +8,7 @@ const useFetchId = () => {
   useEffect(() => {
     setLoading((prev) => !prev);
     // Fetch the id.json file from the public folder
-    fetch("http://localhost:5173/id.json")
+    fetch("https://form-client.netlify.app//id.json")
       .then((response) => response.json())
       .then((data) => {
         setStaffId(data);
