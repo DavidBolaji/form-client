@@ -67,7 +67,7 @@ const useForm = () => {
     setLoad((prev) => !prev);
     const { id, sex, phoneNumber, penNumber, LGA, pfa } = state;
 
-    fetch("http://localhost:5000/api/v1/users/create", {
+    fetch("https://form-5m0m.onrender.com/api/v1/users/create", {
       headers: {
         "Content-Type": "application/json",
       },
