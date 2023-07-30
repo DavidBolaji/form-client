@@ -43,17 +43,6 @@ const useFetchId = () => {
 
   const reload = () => setCount((count) => count + 1);
 
-  // useEffect(() => {
-  //   setLoading((prev) => !prev);
-  //   // Fetch the id.json file from the public folder
-  //   fetch("https://form-client.netlify.app//id.json")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setStaffId(data);
-  //       setLoading((prev) => !prev);
-  //     })
-  //     .catch((error) => console.error("Error fetching data:", error));
-  // }, []);
   return { loading, staffId, reload };
 };
 
