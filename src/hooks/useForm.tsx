@@ -66,7 +66,8 @@ const useForm = () => {
   const handleSubmit = async () => {
     setLoad((prev) => !prev);
     const { id, sex, phoneNumber, penNumber, LGA, pfa } = state;
-
+    // http://localhost:5000/api/v1/users/create
+    // https://form-5m0m.onrender.com/api/v1/users/create
     fetch("https://form-5m0m.onrender.com/api/v1/users/create", {
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +89,6 @@ const useForm = () => {
       })
       .catch((error) => {
         setLoad((prev) => !prev);
-        console.log(error?.response.data);
         setError(
           // error?.response?.data.message ??
           error?.response?.statusText ?? "An error occured"

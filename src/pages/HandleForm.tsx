@@ -13,6 +13,15 @@ interface State {
   pfaError: string;
 }
 
+export interface IUser {
+  id: string;
+  sex: string;
+  phoneNumber: string;
+  penNumber: string;
+  LGA: string;
+  pfa: string;
+}
+
 type ActionType =
   | { type: "CHANGE"; field: string; value: string }
   | { type: "ERROR"; field: string; message: string };

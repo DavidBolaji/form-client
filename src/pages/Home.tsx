@@ -25,7 +25,7 @@ const CustomeFormElement: React.FC<IForm> = ({ element }) => {
 };
 
 const Home: React.FC = () => {
-  const { staffId, loading } = useFetchId();
+  const { staffId, loading, reload } = useFetchId();
   const {
     state,
     handleInputChange,
@@ -53,7 +53,13 @@ const Home: React.FC = () => {
           title="Successfully Added User"
           subTitle="User was added to database succesfully"
           extra={[
-            <Button key="buy" onClick={closeSuccess}>
+            <Button
+              key="buy"
+              onClick={() => {
+                closeSuccess();
+                reload();
+              }}
+            >
               close
             </Button>,
           ]}
@@ -73,7 +79,7 @@ const Home: React.FC = () => {
       )}
       <div className="max-w-[752px] md:w-[752px] bg-white form  md:mt-[160px] md:mb-[72px]">
         <div className="flex items-center">
-          <h1 className="px-[52px] py-[40px]">LGA CATEGORY ( AASA - AKAN)</h1>
+          <h1 className="px-[52px] py-[40px]">LGA CATEGORY </h1>
         </div>
         <hr />
         <div className="px-[52px]">

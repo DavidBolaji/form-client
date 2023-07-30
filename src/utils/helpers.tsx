@@ -1,7 +1,7 @@
 import { saveAs } from "file-saver";
 import * as XLSX from "xlsx";
 
-export const exportToExcel = async () => {
+export const exportToExcel = async (cb: () => void) => {
   const fileType =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
   const fileName = "data.xlsx";
@@ -9,7 +9,6 @@ export const exportToExcel = async () => {
   fetch("https://form-5m0m.onrender.com/api/v1/users")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       const newUser = data.data.map((e: any) => {
         return {
           "Staff Id": e.id,
@@ -30,8 +29,10 @@ export const exportToExcel = async () => {
 
       const excelBlob = new Blob([excelBuffer], { type: fileType });
       saveAs(excelBlob, fileName);
+      cb();
     })
     .catch((error) => {
       console.log(error);
+      cb();
     });
 };
